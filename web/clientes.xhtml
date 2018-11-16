@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cliente</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="Estandar.css"/>
+        
+        <div class="login-page">
+            <div class="login-form">
+                <div class="table">
+                    <h:dataTable class="table" value=""
+                                 var="cliente"
+                                 width="100%">
+                        <h:column class="column">
+                            <f:facet name="header">
+                                <h:outputLabel value="NOMBRE"/>
+                            </f:facet>
+                            <h:outputText class="column" value=""/>
+                        </h:column>
+                        <h:column class="column">
+                            <f:facet name="header">
+                                <h:outputLabel value="PATERNO"/>
+                            </f:facet>
+                            <h:outputText class="column" value=""/>
+                        </h:column>
+                        <h:column class="column">
+                            <f:facet name="header">
+                                <h:outputLabel value="MATERNO"/>
+                            </f:facet>
+                            <h:outputText class="column" value=""/>
+                        </h:column>
+                        
+                        <h:column class="column">
+                            <f:facet name="header">
+                                <h:outputLabel value="DIRECCION"/>
+                            </f:facet>
+                            <h:outputText class="column" value="">
+                                <f:convertDateTime type="date"
+                                                   pattern="dd/MM/yyyy"/>
+                            </h:outputText>
+                        </h:column>
+                        
+                        <h:column class="column">
+                            <f:facet name="header">
+                                <h:outputLabel value="TELEFONO"/>
+                            </f:facet>
+                            <h:outputText class="column" value=""/>
+                        </h:column>
+                        
+                        <h:column class="column">
+                            <h:commandLink class="column" value="ELIMINAR"
+                                             action=""
+                                             />
+                        </h:column>
+                        
+                    </h:dataTable>
+                    <br></br>
+                    <h:commandButton style="font-family: 'Roboto', sans-serif;
+                                    text-transform: uppercase;
+                                    outline: 0;
+                                    background: #4CAF50;
+                                    width: 100%;
+                                    border: 0;
+                                    padding: 10px;
+                                    color: #FFFFFF;
+                                    font-size: 14px;
+                                    -webkit-transition: all 0.3 ease;
+                                    transition: all 0.3 ease;
+                                    cursor: pointer;"   value="cancelar" type="button"></h:commandButton>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
