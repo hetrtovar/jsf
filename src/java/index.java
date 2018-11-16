@@ -8,13 +8,21 @@
  *
  * @author hugo
  */
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 @ManagedBean
 public class index {
     
-    
-    public String Navegacion()
+    public String btncatalogo()
     {
-        return "crearCuenta.xhtml";
+        return "catalogo.xhtml";
+     
+    }
+    
+    
+    public String linkcrear()
+    {
+     return "crearCuenta.xhtml";
     }
 }

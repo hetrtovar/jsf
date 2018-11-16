@@ -4,22 +4,17 @@
  * and open the template in the editor.
  */
 
-import javax.annotation.PostConstruct;
-import javax.inject.Named;
-import javax.enterprise.context.Dependent;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 /**
  *
  * @author hugo
  */
-@ManagedBean
-@SessionScoped
-public class crearCuenta {
-      public String userName ,nombre ,ap,am ,dir ,num;
-    private Cliente cliente;
-    private conexion con;
-    
+import java.io.Serializable;
+import java.sql.SQLException;
+import javax.ejb.Stateless;
+import javax.faces.bean.ManagedBean;
+ public class Cliente{
+    private String userName ,nombre ,ap,am ,dir ,num;
+
     public String getUserName() {
         return userName;
     }
@@ -67,29 +62,6 @@ public class crearCuenta {
     public void setNum(String num) {
         this.num = num;
     }
-
-   
-    public String registrarCliente() 
-    {
-        cliente = new Cliente();
-        cliente.setUserName(userName);
-        cliente.setAp(ap);
-        cliente.setAm(am);
-        cliente.setDir(dir);
-        cliente.setNum(num);
-        cliente.setNombre(nombre);
-        try {        
-            con = new conexion();
-            return con.insertarCliente(cliente);
-        } catch (Exception ex) {
-         return "Error.xhtml";   
-        }
-    }
     
-    
-    public String nav(){
-        return "index.xhtml";
-    }
-       
     
 }

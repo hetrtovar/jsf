@@ -35,12 +35,14 @@ public String conectar() throws ClassNotFoundException, SQLException {
     }
   }
     
-public String insertarCliente()
+public String insertarCliente(Cliente c)
 {
     
         try {
+            conectar();
             Statement stm = conexion.createStatement();
-            ResultSet res = stm.executeQuery("insert into pru values("+4+")");
+            String query = "insert into clientes values(idcliente.nextval,'"+c.getUserName()+"','"+c.getNombre()+"','"+c.getAp()+"','"+c.getAm()+"','"+c.getDir()+"',"+c.getNum()+")";
+            ResultSet res = stm.executeQuery(query);
                 conexion.commit();
                 return "index.xhtml";
             

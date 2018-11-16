@@ -10,31 +10,36 @@
               <h:form  class="register-form">
                   <table>
                       <tr align="justify">
+                          <tr>
+                          
+                          <td align="center">UserName: </td>
+                          <td align="center"><h:inputText value="#{crearCuenta.userName}" /></td>
+                      </tr>
                 <td aling = "justifyr">Nombre:</td>
-                <td aling = "justify"> <input type="text" placeholder="Nombre"/> </td>
+                <td aling = "justify"> <h:inputText value="#{crearCuenta.nombre}"/> </td>
                       </tr>
                       <tr>
                           
-                          <td>Apellido Materno:</td>
-                          <td> <input type="text" placeholder="apellido Paterno"/> </td>
+                          <td>Apellido Paterno:</td>
+                          <td> <h:inputText value="#{crearCuenta.ap}"/> </td>
                           
                       </tr>
                       <tr>
                           
                           
                           <td align="center">Apellido Materno: </td>
-                          <td align="center"><input type="text" placeholder="Apellido Materno"/></td>
+                          <td align="center"><h:inputText value="#{crearCuenta.am}"/></td>
                       </tr>
                       <tr>
                           
                           <td align="center">Direccion</td> 
-                          <td align="center"><input type="text" placeholder="Dirección"/></td>
+                          <td align="center"><h:inputText value="#{crearCuenta.dir}"/></td>
                         
                       </tr>
                       
                       <tr>
                           <td  align="center"> Telefono:</td>
-                          <td align="center"><input type="text" placeholder="Telefono"/></td>
+                          <td align="center"><h:inputText value="#{crearCuenta.num}"/></td>
                           
                       </tr>
                   </table>
@@ -50,7 +55,7 @@
                                 font-size: 14px;
                                 -webkit-transition: all 0.3 ease;
                                 transition: all 0.3 ease;
-                                cursor: pointer;" action="#{crearCuenta.registrarCliente}" value="crear" ></h:commandButton>
+                                cursor: pointer;" action="#{crearCuenta.registrarCliente()}" value="crear" ></h:commandButton>
                 <h:commandButton style="font-family: 'Roboto', sans-serif;
                                 text-transform: uppercase;
                                 outline: 0;

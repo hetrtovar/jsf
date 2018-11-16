@@ -30,7 +30,7 @@
                                 font-size: 14px;
                                 -webkit-transition: all 0.3 ease;
                                 transition: all 0.3 ease;
-                                cursor: pointer;"   value="login" type="button"  ></h:commandButton>
+                                cursor: pointer;"   value="login" ></h:commandButton>
                 
                 <br></br>
                 <h:commandButton style="font-family: 'Roboto', sans-serif;
@@ -45,9 +45,9 @@
                                 -webkit-transition: all 0.3 ease;
                                 transition: all 0.3 ease;
                                 cursor: pointer;"  
-                                 value="Ver catalogo"></h:commandButton>
+                                value="Ver catalogo" action="#{index.btncatalogo()}"></h:commandButton>
               
-              <h:commandLink value="Crear Cuenta" action="#{index.Navegacion}" />
+                                <h:commandLink value="Crear Cuenta" action="#{index.linkcrear()}" />
               </h:form>
               </div>
         </div>
