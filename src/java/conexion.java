@@ -135,6 +135,26 @@ public ArrayList<genero> generos()
     return list;   
 }
 
+public ArrayList<prestamo> prestamos(){
+    ArrayList<prestamo> lista = new ArrayList();
+    try{
+        conectar();
+        Statement stm = conexion.createStatement();
+        String query = "select from prestamos";
+        ResultSet res = stm.executeQuery(query);
+        System.out.println(query);
+        while(res.next()){
+            prestamo p = new prestamo();
+            p.setId(Integer.parseInt(res.getString(1)));
+            p.setPrestamo(res.getString(2));
+            lista.add(p);
+        }
+        return list;
+    } catch (Exception ex){
+        System.out.println(ex.toString());
+    }
+}
+
 
 public String insertarGenero(genero c)
 {
