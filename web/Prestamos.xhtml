@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+   <h:outputStylesheet library="css" name="Estandar.css"/>
+    </h:head>
+    <h:body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <ul>
+            <li><a href="catalogo.xhtml">HOME</a></li>
+            <li><a href="clientes.xhtml">CLIENTES</a></li>
+            <li><a href="altaPelis.xhtml">PELICULAS</a></li>
+            <li><a href="Generos.xhtml">GÉNEROS</a></li>
+            <li><a href="Prestamos.xhtml">PRESTAMOS</a></li>
+        </ul>
+        <br></br>
+        <h:form class="register-form">
+             <div style="height:200px;overflow-x:auto;overflow-y:scroll;">
+                            
+                            <h:dataTable  styleClass="table" value=""
+                                 var="pelicula"
+                                 width="100%">
+                             <h:column  >
+                            <f:facet  name="header">Pelicula
+                            </f:facet>
+                        </h:column>
+                        <h:column >
+                            <f:facet name="header">
+                                Genero
+                            </f:facet>
+                               
+                        </h:column>
+                        <h:column >
+                            <f:facet name="header">
+                                Disponibilidad
+                            </f:facet>
+                        </h:column>
+                                <h:column >
+                                <f:facet name="header">Action</f:facet>
+                            <h:commandButton value="Delete" action="Error.xhtml"/>
+                           </h:column>
+                    </h:dataTable>
+             </div>
+            
+                    <h:outputLabel>  </h:outputLabel>     
+                    <h:selectOneMenu>
+                        
+                         <f:selectItem itemValue = "1" itemLabel = "General" />
+                         <f:selectItem itemValue = "2" itemLabel = "Agrupar por Cliente" /> 
+                         <f:selectItem itemValue = "3" itemLabel = "Ordenar por estatus" />
+                    </h:selectOneMenu>
+                
+                 <br></br>
+                  <h:commandButton
+                                style="font-family: 'Roboto', sans-serif;
+                                text-transform: uppercase;
+                                outline: 0;
+                                background: #4CAF50;
+                                width: 50%;
+                                border: 1;
+                                padding: 10px;
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                -webkit-transition: all 0.3 ease;
+                                transition: all 0.3 ease;
+                                cursor: pointer;"   value="Actualizar"  ></h:commandButton>
+                                <br></br>
+                                 <h:commandButton
+                                style="font-family: 'Roboto', sans-serif;
+                                text-transform: uppercase;
+                                outline: 0;
+                                background: #4CAF50;
+                                width: 50%;
+                                border: 1;
+                                padding: 10px;
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                -webkit-transition: all 0.3 ease;
+                                transition: all 0.3 ease;
+                                cursor: pointer;"   value="cancelar" type="button"  ></h:commandButton>
+            
+        </h:form>
+        
+    </h:body>
+</html>

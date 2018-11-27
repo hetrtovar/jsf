@@ -4,33 +4,38 @@
  * and open the template in the editor.
  */
 
+import java.util.ArrayList;
+import javax.inject.Named;
+import javax.enterprise.context.Dependent;
+
 /**
  *
  * @author hugo
  */
-import java.io.Serializable;
-import java.sql.SQLException;
-import javax.ejb.Stateless;
-import javax.faces.bean.ManagedBean;
- public class Cliente{
-    private String userName ,nombre ,ap,am ,dir ,num, pass;
-    private int id;
+@Named(value = "clientes")
+@Dependent
+public class clientes {
+    private ArrayList<Cliente> listClientes;
+     private Cliente cc;
+     private String userName ,nombre ,ap,am ,dir ,num, pass;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getPass() {
-        return pass;
+    public ArrayList<Cliente> getListClientes() {
+        return listClientes;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setListClientes(ArrayList<Cliente> listClientes) {
+        this.listClientes = listClientes;
     }
-    
+     
+     
+
+    public Cliente getCc() {
+        return cc;
+    }
+
+    public void setCc(Cliente cc) {
+        this.cc = cc;
+    }
 
     public String getUserName() {
         return userName;
@@ -79,6 +84,27 @@ import javax.faces.bean.ManagedBean;
     public void setNum(String num) {
         this.num = num;
     }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+    /**
+     * Creates a new instance of clientes
+     */
+    public clientes() {
+        llenarLista();
+    }
     
+    
+    public void llenarLista()
+    {
+        conexion con = new conexion();
+        listClientes = con.listaClientes();
+        
+    }
     
 }

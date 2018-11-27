@@ -8,6 +8,9 @@ and open the template in the editor.
     Author     : hugo
 */
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+html {
+  text-align: center;
+}
 .form {
   position: relative;
   z-index: 1;
@@ -50,11 +53,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
-table column {
+table {
     border-collapse: collapse;
-    widht: 40%;
+    widht: 80%;
     margin: auto;
     border: 1px solid black;
+    text-align: center;
+    background:#F9F9F9;
+    border-top:1px solid #BBBBBB;
 }
 ul {
     list-style-type: none;
@@ -79,4 +85,7 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+divClass{
+    background: #FFFFFF;
 }

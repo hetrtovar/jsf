@@ -6,10 +6,12 @@ and open the template in the editor.
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+           <h:outputStylesheet library="css" name="Estandar.css"/>
     </h:head>
     <h:body>
         <ul>
@@ -17,10 +19,11 @@ and open the template in the editor.
             <li><a href="clientes.xhtml">CLIENTES</a></li>
             <li><a href="altaPelis.xhtml">PELICULAS</a></li>
             <li><a href="Generos.xhtml">GÉNEROS</a></li>
+            <li><a href="Prestamos.xhtml">PRESTAMOS</a></li>
         </ul>
         <div class="login-page">
             <div class="form">
-                <form class="register-form">
+                <h:form class="register-form">
                     Película:
                     <input type="text" placeholder="Título"/>
                     <br></br>
@@ -28,12 +31,10 @@ and open the template in the editor.
                     <input type="text" placeholder="Director"/>
                     <br></br>
                     Género:
-                    <select>
-                        <option>opción 1</option>
-                        <option>opción 2</option>
-                        <option>opción 3</option>
-                    </select>
-                </form>
+                    <h:selectOneMenu>
+                        <f:selectItems value="#{altaPelis.generos}"/>
+                    </h:selectOneMenu>
+                </h:form>
             </div>
         </div>
     </h:body>

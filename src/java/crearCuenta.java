@@ -16,9 +16,29 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class crearCuenta {
-      public String userName ,nombre ,ap,am ,dir ,num;
+      public String userName ,nombre ,ap,am ,dir ,num, pass, confirpass;
     private Cliente cliente;
     private conexion con;
+
+    public String getConfirpass() {
+        return confirpass;
+    }
+
+    public void setConfirpass(String confirpass) {
+        this.confirpass = confirpass;
+    }
+
+    
+    
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+    
+    
     
     public String getUserName() {
         return userName;
@@ -71,19 +91,39 @@ public class crearCuenta {
    
     public String registrarCliente() 
     {
-        cliente = new Cliente();
+        if(pass.equals(confirpass))
+        {
+            cliente = new Cliente();
         cliente.setUserName(userName);
         cliente.setAp(ap);
         cliente.setAm(am);
         cliente.setDir(dir);
         cliente.setNum(num);
         cliente.setNombre(nombre);
+        cliente.setPass(pass);
         try {        
             con = new conexion();
-            return con.insertarCliente(cliente);
+            String error =  con.insertarCliente(cliente);
+            if(error.isEmpty())
+            {
+                return "Error.xhtml";
+            }
+            else
+            {
+            return error;
+            }
         } catch (Exception ex) {
          return "Error.xhtml";   
         }
+            
+        }
+        else
+        {
+         return "Error.xhtml";      
+        }
+        
+        
+        
     }
     
     

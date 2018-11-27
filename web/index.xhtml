@@ -9,14 +9,20 @@
     </h:head>
     <h:body>
         <f:view>
-            
-            
         <div class="login-page">
             <div class="form">
               <h:form class="login-form">
-                <input type="text" placeholder="idUSuario"/>
-                <input type="password" placeholder="Contraseña"/>
-                
+                  <p>tipo de usuario: </p>
+                  <h:selectOneMenu value="#{index.tipo}">
+                      <f:selectItem itemValue = "1" itemLabel = "Administrador" /> 
+                      <f:selectItem itemValue = "2" itemLabel = "Cliente" /> 
+                    </h:selectOneMenu>
+                  <p>userName:</p>
+                  <h:inputText value="#{index.userName}" />
+                  <br></br>
+                  <p>contraseña:</p>
+                  <h:inputSecret  value="#{index.contraseña}"/>
+                <br></br>
                     
                 <h:commandButton
                                 style="font-family: 'Roboto', sans-serif;
@@ -30,7 +36,7 @@
                                 font-size: 14px;
                                 -webkit-transition: all 0.3 ease;
                                 transition: all 0.3 ease;
-                                cursor: pointer;"   value="login" ></h:commandButton>
+                                cursor: pointer;"   value="login" action="#{index.login()}" ></h:commandButton>
                 
                 <br></br>
                 <h:commandButton style="font-family: 'Roboto', sans-serif;

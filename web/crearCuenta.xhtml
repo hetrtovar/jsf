@@ -11,7 +11,7 @@
                   <table>
                       <tr align="justify">
                           <tr>
-                          
+                              
                           <td align="center">UserName: </td>
                           <td align="center"><h:inputText value="#{crearCuenta.userName}" /></td>
                       </tr>
@@ -42,6 +42,17 @@
                           <td align="center"><h:inputText value="#{crearCuenta.num}"/></td>
                           
                       </tr>
+                      
+                       <tr>
+                          <td  align="center"> contraseña:</td>
+                          <td align="center"><h:inputSecret value="#{crearCuenta.confirpass}"/></td>
+                          
+                      </tr>
+                      <tr>
+                          <td  align="center"> confirmar:</td>
+                          <td align="center"><h:inputSecret  value="#{crearCuenta.pass}"/></td>
+                      </tr>
+                      
                   </table>
                   <h:commandButton style="font-family: 'Roboto', sans-serif;
                                 text-transform: uppercase;
@@ -51,7 +62,6 @@
                                 border: 0;
                                 padding: 10px;
                                 color: #FFFFFF;
-                              
                                 font-size: 14px;
                                 -webkit-transition: all 0.3 ease;
                                 transition: all 0.3 ease;

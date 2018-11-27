@@ -19,57 +19,56 @@ and open the template in the editor.
             <li><a href="clientes.xhtml">CLIENTES</a></li>
             <li><a href="altaPelis.xhtml">PELICULAS</a></li>
             <li><a href="Generos.xhtml">GÉNEROS</a></li>
+            <li><a href="Prestamos.xhtml">PRESTAMOS</a></li>
         </ul>
         <br></br>
         <br></br>
         <div class="login-page">
             <div class="login-form">
                 <div class="table">
-                    <h:dataTable class="table" value=""
+                    <h:form>
+                        <h:dataTable class="table" value="#{clientes.listClientes}"
                                  var="cliente"
                                  width="100%">
                         <h:column class="column">
                             <f:facet name="header">
                                 <h:outputLabel value="NOMBRE"/>
                             </f:facet>
-                            <h:outputText class="column" value=""/>
+                            <h:outputText class="column" value="#{cliente.nombre}"/>
                         </h:column>
                         <h:column class="column">
                             <f:facet name="header">
                                 <h:outputLabel value="PATERNO"/>
                             </f:facet>
-                            <h:outputText class="column" value=""/>
+                            <h:outputText class="column" value="#{cliente.ap}"/>
                         </h:column>
                         <h:column class="column">
                             <f:facet name="header">
                                 <h:outputLabel value="MATERNO"/>
                             </f:facet>
-                            <h:outputText class="column" value=""/>
+                            <h:outputText class="column" value="#{cliente.am}"/>
                         </h:column>
                         
                         <h:column class="column">
                             <f:facet name="header">
                                 <h:outputLabel value="DIRECCION"/>
                             </f:facet>
-                            <h:outputText class="column" value="">
-                                <f:convertDateTime type="date"
-                                                   pattern="dd/MM/yyyy"/>
+                            <h:outputText class="column" value="#{cliente.dir}">
                             </h:outputText>
                         </h:column>
-                        
+
                         <h:column class="column">
                             <f:facet name="header">
                                 <h:outputLabel value="TELEFONO"/>
                             </f:facet>
-                            <h:outputText class="column" value=""/>
+                            <h:outputText class="column" value="#{cliente.num}"/>
                         </h:column>
                         
                         <h:column class="column">
-                            <h:commandLink class="column" value="ELIMINAR"/>
+                            <h:commandButton class="column" value="ELIMINAR"/>
                         </h:column>
-                        
-                    </h:dataTable>
-                    <br></br>
+                    </h:dataTable>  
+                        <br></br>
                     <h:commandButton style="font-family: 'Roboto', sans-serif;
                                     text-transform: uppercase;
                                     outline: 0;
@@ -81,7 +80,8 @@ and open the template in the editor.
                                     font-size: 14px;
                                     -webkit-transition: all 0.3 ease;
                                     transition: all 0.3 ease;
-                                    cursor: pointer;"   value="cancelar" type="button"></h:commandButton>
+                                    cursor: pointer;"   value="cancelar" type="button"></h:commandButton>  
+                    </h:form>
                 </div>
             </div>
         </div>
