@@ -1,17 +1,108 @@
     <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       >
     <h:head>
         <title>Registro de prestamo</title>
     </h:head>
     <h:body >
+        
+        
+        
         <h:outputStylesheet library="css" name="Estandar.css"/>
+        
+ <ul>
+                
+                <h:panelGroup>
+                    
+            <li><a href="catalogo.xhtml">HOME</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+            <li><a href="clientes.xhtml">CLIENTES</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+            <li><a href="altaPelis.xhtml">PELICULAS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+                    <li><a href="Generos.xhtml">GÉNEROS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+            <li><a href="Prestamos.xhtml">PRESTAMOS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+                    
+            <li><a href="altaPrestamo.xhtml">PRESTAMOS</a></li>
+                </h:panelGroup>
+            
+        </ul>
+        <br></br>
+        
         
         <div class="login-page" >
             <div class="form">
-              <form class="register-form">
+              <h:form class="register-form">
+                  
+  
+                  
+                  <!--Tabla-->
+                  
+                  
+                  <div style="height:200px;overflow-x:auto;overflow-y:scroll;">
+                        <h:dataTable  styleClass="table"
+                                      value="#{prestamos.prestamos}"
+                                 var="prestamo"
+                                 width="100%">
+                             <h:column  >
+                            <f:facet  name="header">id
+                            </f:facet>
+                                 #{prestamo.id}
+                        </h:column>
+                        <h:column >
+                            <f:facet name="header">
+                                Cliente
+                            </f:facet>
+                               #{prestamo.cliente}
+                        </h:column>
+                        <h:column >
+                            <f:facet name="header">
+                                Pelicula
+                            </f:facet>
+                            #{prestamo.pelicula}
+                        </h:column>
+                        <h:column >
+                                <f:facet name="header">Fecha de Prestamos</f:facet>
+                            #{prestamo.fechaPrestamo}
+                           </h:column>
+                                <h:column >
+                                <f:facet name="header">Fecha de Entrega</f:facet>
+                            #{prestamo.fechaEntrega}
+                           </h:column>  
+                                
+                    </h:dataTable>
+                  </div>
                 
-              </form>
+                 Pelicula
+                 <h:selectOneMenu value="#{prestamos.idPelicula}">
+                      <f:selectItems value="#{prestamos.pedir}"/>
+                  </h:selectOneMenu>
+                 <br></br>
+                 Fecha de Prestamo
+                 <h:outputLabel>Fecha</h:outputLabel>
+                 <br></br>
+                    <h:commandButton
+                                style="font-family: 'Roboto', sans-serif;
+                                text-transform: uppercase;
+                                outline: 0;
+                                background: #4CAF50;
+                                width: 50%;
+                                border: 1;
+                                padding: 10px;
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                -webkit-transition: all 0.3 ease;
+                                transition: all 0.3 ease;
+                                cursor: pointer;"   value="Pedir Prestamo" action="#{prestamos.pedirPrestamo()}"></h:commandButton>
+              </h:form>
             </div>
         </div>
     </h:body>

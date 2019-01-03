@@ -25,54 +25,59 @@ and open the template in the editor.
         <br></br>
         <h:form class="register-form">
              <div style="height:200px;overflow-x:auto;overflow-y:scroll;">
-                            
-                            <h:dataTable  styleClass="table" value=""
-                                 var="pelicula"
+                 <h:dataTable  styleClass="table" 
+                                 var="prestamo"
                                  width="100%">
                              <h:column  >
-                            <f:facet  name="header">Pelicula
+                            <f:facet  name="header">id
                             </f:facet>
+                                 #{prestamo.id}
                         </h:column>
                         <h:column >
                             <f:facet name="header">
-                                Genero
+                                Cliente
                             </f:facet>
-                               
+                               #{prestamo.cliente}
                         </h:column>
                         <h:column >
                             <f:facet name="header">
-                                Disponibilidad
+                                Pelicula
                             </f:facet>
+                            #{prestamo.pelicula}
                         </h:column>
-                                <h:column >
-                                <f:facet name="header">Action</f:facet>
-                            <h:commandButton value="Delete" action="Error.xhtml"/>
+                        <h:column >
+                                <f:facet name="header">Fecha de Prestamos</f:facet>
+                            #{prestamo.fechaPrestamo}
                            </h:column>
+                                <h:column >
+                                <f:facet name="header">Fecha de Entrega</f:facet>
+                            #{prestamo.fechaEntrega}
+                           </h:column>  
+                                
                     </h:dataTable>
              </div>
             
                     <h:outputLabel>  </h:outputLabel>     
                     <h:selectOneMenu>
-                        
                          <f:selectItem itemValue = "1" itemLabel = "General" />
                          <f:selectItem itemValue = "2" itemLabel = "Agrupar por Cliente" /> 
                          <f:selectItem itemValue = "3" itemLabel = "Ordenar por estatus" />
                     </h:selectOneMenu>
                 
                  <br></br>
-                  <h:commandButton
-                                style="font-family: 'Roboto', sans-serif;
-                                text-transform: uppercase;
-                                outline: 0;
-                                background: #4CAF50;
-                                width: 50%;
-                                border: 1;
-                                padding: 10px;
-                                color: #FFFFFF;
-                                font-size: 14px;
-                                -webkit-transition: all 0.3 ease;
-                                transition: all 0.3 ease;
-                                cursor: pointer;"   value="Actualizar"  ></h:commandButton>
+                      <h:commandButton
+                                    style="font-family: 'Roboto', sans-serif;
+                                    text-transform: uppercase;
+                                    outline: 0;
+                                    background: #4CAF50;
+                                    width: 50%;
+                                    border: 1;
+                                    padding: 10px;
+                                    color: #FFFFFF;
+                                    font-size: 14px;
+                                    -webkit-transition: all 0.3 ease;
+                                    transition: all 0.3 ease;
+                                    cursor: pointer;"   value="Actualizar"  ></h:commandButton>
                                 <br></br>
                                  <h:commandButton
                                 style="font-family: 'Roboto', sans-serif;

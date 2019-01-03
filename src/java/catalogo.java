@@ -10,7 +10,6 @@ import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
 /**
  *
  * @author hugo
@@ -21,7 +20,24 @@ public class catalogo {
 private ArrayList<pelicula> list;
 private String titulo, genero;
 private int existemcia;
- private boolean showPassword =true;     
+private boolean showPassword =true;
+private boolean mostrarMenu = true;
+private boolean mostrarlinkCrear = false;
+
+    public boolean isMostrarlinkCrear() {
+        return mostrarlinkCrear;
+    }
+
+    public void setMostrarlinkCrear(boolean mostrarlinkCrear) {
+        this.mostrarlinkCrear = mostrarlinkCrear;
+    }
+    public boolean isMostrarMenu() {
+        return mostrarMenu;
+    }
+
+    public void setMostrarMenu(boolean mostrarMenu) {
+        this.mostrarMenu = mostrarMenu;
+    }
     public boolean isShowColumnDelete(){ 
      return showPassword; 
     } 
@@ -45,13 +61,10 @@ private int existemcia;
     public int getExistemcia() {
         return existemcia;
     }
-
+    
     public void setExistemcia(int existemcia) {
         this.existemcia = existemcia;
     }
-
-   
-
     public ArrayList<pelicula> getList() {
         return list;
     }
@@ -64,6 +77,16 @@ private int existemcia;
      */
     public catalogo() {
         list =  llenartab();
+        switch(index.userType)
+        {
+            case 0:mostrarMenu = true;
+                   mostrarlinkCrear = false; break;
+            case 1: mostrarMenu = true;
+                   mostrarlinkCrear = false;break;
+            case 3: mostrarMenu = false;
+                    mostrarlinkCrear = true; break;
+        }
+        
     }
     
     public ArrayList<pelicula> llenartab()
@@ -71,6 +94,12 @@ private int existemcia;
         conexion con = new conexion();
         return con.lista();      
    }
+    
+    public void actualizar()
+    {
+        conexion con = new conexion();
+        list = con.lista();   
+    }
     
     
     

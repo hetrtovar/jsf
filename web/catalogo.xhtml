@@ -14,13 +14,30 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <h:outputStylesheet library="css" name="Estandar.css"/>
-        <h:panelGroup>
+        <h:panelGroup rendered="#{catalogo.mostrarMenu}">
             <ul>
+                
+                <h:panelGroup>
+                    
             <li><a href="catalogo.xhtml">HOME</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
             <li><a href="clientes.xhtml">CLIENTES</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
             <li><a href="altaPelis.xhtml">PELICULAS</a></li>
-            <li><a href="Generos.xhtml">GÉNEROS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+                    <li><a href="Generos.xhtml">GÉNEROS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
             <li><a href="Prestamos.xhtml">PRESTAMOS</a></li>
+                </h:panelGroup>
+                <h:panelGroup>
+                    
+            <li><a href="altaPrestamo.xhtml">PRESTAMOS</a></li>
+                </h:panelGroup>
+            
         </ul>
         </h:panelGroup>
         
@@ -31,7 +48,6 @@ and open the template in the editor.
                 <div >
                     <h:form>
                         <div style="height:200px;overflow-x:auto;overflow-y:scroll;">
-                            
                             <h:dataTable  styleClass="table" value="#{catalogo.list}"
                                  var="pelicula"
                                  width="100%">
@@ -58,8 +74,29 @@ and open the template in the editor.
                            </h:column>
                     </h:dataTable>
                         </div>
-                    </h:form>
-                   
+                        <h:panelGroup rendered="#{catalogo.mostrarlinkCrear}">
+                        <h:commandLink value="Crear Cuenta" action="crearCuenta.xhtml" />
+                        </h:panelGroup>
+                        <br></br>
+                        <h:panelGroup rendered="#{catalogo.mostrarlinkCrear}">
+                        <h:commandLink value="Regresar" action="index.xhtml" />
+                        </h:panelGroup>
+                        
+                          <h:commandButton style="font-family: 'Roboto', sans-serif;
+                                text-transform: uppercase;
+                                outline: 0;
+                                background: #4CAF50;
+                                width: 100%;
+                                border: 0;
+                                padding: 10px;
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                -webkit-transition: all 0.3 ease;
+                                transition: all 0.3 ease;
+                                cursor: pointer;"  
+                                value="" action="#{catalogo.actualizar()}"></h:commandButton>
+                        
+                    </h:form> 
                 </div>
             </div>
         </div>

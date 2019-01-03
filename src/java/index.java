@@ -16,6 +16,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 @ManagedBean
 public class index {
+    public static int userType = -1;
+    public static int  id_user = 0;
     private String contraseña, userName;
     private String tipo;
 
@@ -26,9 +28,6 @@ public class index {
     public void setTipo(String tipo) {
        this.tipo = tipo;
     }
-    
-    
-    
     
     public String getContraseña() {
         return contraseña;
@@ -59,10 +58,12 @@ public class index {
             System.out.println(res);
             if(res.equals(contraseña) )
             {
+                userType = 1;
                 return "catalogo.xhtml";
             }
             else
             {
+                
                 return "index.xhtml";
             }
             
@@ -76,15 +77,12 @@ public class index {
         {
             return "Error.xhtml";
         }
-        
-       
        
     }
     
-    
-    
     public String btncatalogo()
     {
+        userType = 3;
         return "catalogo.xhtml";
      
     }
